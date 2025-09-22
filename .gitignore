@@ -1,0 +1,86 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Bb]in/
+[Oo]bj/
+UserSettings/
+
+# Crash reports
+sysinfo.txt
+
+# ==================== #
+# Visual Studio / Rider #
+# ==================== #
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.user
+*.userprefs
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ======== #
+# Packages #
+# ======== #
+/Packages/com.unity.package-manager-ui/
+*.unitypackage
+
+# Cache
+/.vs/
+*.cache
+
+# ============ #
+# Build output #
+# ============ #
+*.apk
+*.aab
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata
+*.ipa
+*.app
+
+# ================= #
+# Addressables / GI #
+# ================= #
+/Assets/AddressableAssetsData/*
+/Assets/StreamingAssets/aa/*
+/Assets/AssetBundles/
+
+# ================= #
+# Rider cache files #
+# ================= #
+.idea/
+*.sln.iml
+
+# ================= #
+# Other Unity stuff #
+# ================= #
+/ProjectSettings/EditorBuildSettings.asset
+/ProjectSettings/EditorSettings.asset
