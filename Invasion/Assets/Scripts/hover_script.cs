@@ -6,17 +6,31 @@ using UnityEngine.UIElements;
 
 public class hover_script : MonoBehaviour
 {
-        public Tilemap tilemap;
-        public GameObject hoverObject;
-        public GameObject selectedObject;
+    public Tilemap tilemap;
+    public GameObject hoverObject;
+    public GameObject selectedObject;
+    public Vector3 WorldPosition;
 
-        void Start()
+    public static hover_script HoverSciptObj { get; private set; }
+    void Awake()
+    {
+        if (HoverSciptObj != null && HoverSciptObj != this)
         {
-            if (tilemap == null)
-            {
-                tilemap = GetComponent<Tilemap>();
-            }
+            Destroy(this.gameObject);
         }
+        else
+        {
+            HoverSciptObj = this;
+        }
+    }
+
+    void Start()
+    {
+        if (tilemap == null)
+        {
+            tilemap = GetComponent<Tilemap>();
+        }
+    }
 
     void Update()
     {
@@ -31,19 +45,16 @@ public class hover_script : MonoBehaviour
 
         Vector3 cellWorldPos = tilemap.GetCellCenterWorld(cellPosition);
 
+
         // Match hover object Z with its current Z
         hoverObject.transform.position = new Vector3(cellWorldPos.x, cellWorldPos.y, hoverObject.transform.position.z);
 
         if (Input.GetMouseButtonDown(0))
         {
-            
             selectedObject.transform.position = new Vector3(cellWorldPos.x, cellWorldPos.y, selectedObject.transform.position.z);
-           
-
             if (tilemap.HasTile(cellPosition))
             {
-                
-
+                WorldPosition = cellWorldPos;
                 Debug.Log($"Clicked Cell Position: {cellPosition}");
                 Debug.Log($"Tile at {cellPosition} is {tilemap.GetTile(cellPosition).name}");
             }
